@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="text-center text-danger">Search movie  --> The Open Movie Database (OMDb) API</h1>
+    <form asp-action="Index" asp-controller="Home">
+        <input type="text" placeholder="Search Movie Name" class="form-control" name="movie_name" />
+        <input type="submit" name="Search" class="btn btn-danger mt-3" />
+    </form>
+
+    <div class="mt-5">
+        <div class="row">
+        <div class=" col-md-3 card" >
+            <img src="@ViewBag.img" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">@ViewBag.t</h5>
+                <p>@ViewBag.y</p>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+﻿@model PopularPeopleRes
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center text-danger">Popular People</h1>
+       </div>
+
+
+  
+    
+       
+        @foreach (var people in Model.Results)
+                {
+         <div class="col-md-4">
+         <div class="card mb-3" >
+                <div class="row no-gutters">
+               
+                    <div class="col-md-4">
+                        <img src="@ViewBag.imageurl/@people.profile_path" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                                <h5 class="card-title">@people.name</h5>
+                                <p>@people.popularity</p>
+                               <p>@people.title</p>
+                               
+                        </div>
+                    </div> 
+                   
+                </div>
+            </div>
+            </div>
+                }
+            
+        </div>
+</div>
+

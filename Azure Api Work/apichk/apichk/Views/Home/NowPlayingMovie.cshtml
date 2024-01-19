@@ -1,0 +1,27 @@
+﻿@model NowPlayingRes
+@{
+    ViewData["Title"] = "The Movie Database API";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center text-danger">Popular Movies --> The Movie Database (TMDB) API</h1>
+        </div>
+        @foreach (var movie in Model.Results)
+        {
+            <div class="col-md-3 mt-5">
+
+                <div class="card">
+                    <img src="@ViewBag.imageurl/@movie.poster_path" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@movie.Title</h5>
+                     <p>@movie.release_date.ToString("MMM dd, yyyy")</p> 
+                       
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>

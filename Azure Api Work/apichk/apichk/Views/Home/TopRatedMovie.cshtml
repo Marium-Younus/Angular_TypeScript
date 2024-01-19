@@ -1,0 +1,38 @@
+﻿@model TopRated_MovieRes
+@{
+    ViewData["Title"] = "The Movie Database API";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center text-primary">Top Rated Movies</h1>
+        </div>
+        @foreach (var movie in Model.Results)
+        {
+            <div class="col-md-2 mt-5">
+
+                <div class="card">
+                    <img src="@ViewBag.imageurl/@movie.poster_path" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@movie.title</h5>
+                        <p>@movie.first_air_date.ToString("MMM dd, yy")</p>
+                    </div>
+                        <div class="card-footer bg-dark">
+                           
+                            @{
+                                double value = @movie.vote_average;
+                                int result = (int)(value * 100) / 10;
+                            }
+                            <a class="text-light btn">@result<sup>*</sup></a>
+                        </div>
+                        
+                   
+                </div>
+
+            </div>
+        }
+    </div>
+
+</div>
